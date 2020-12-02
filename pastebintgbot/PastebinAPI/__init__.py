@@ -1,5 +1,5 @@
 """PasteBin API Class
-Originally developed by acidvegas (https://acid.vegas/pastebin)
+Based on code by acidvegas
 
 """
 # API Documentation: https://pastebin.com/api

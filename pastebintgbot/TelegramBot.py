@@ -63,7 +63,6 @@ class TelegramBot:
             "start", self.start, filters=Filters.chat_type.private))
         dp.add_handler(CommandHandler(
             "help", self.help_command, filters=Filters.chat_type.private))
-        # TODO: add handler only to private messages
         dp.add_handler(MessageHandler(
             Filters.text & Filters.chat_type.private, self.receive_paste))
 
