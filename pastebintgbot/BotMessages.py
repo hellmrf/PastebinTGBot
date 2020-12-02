@@ -20,11 +20,13 @@ TELEGRAM_MESSAGES = {
     "start": "Hey! What do you want to Paste? Just send your text or send /help to see the complete usage.",
     "help": _help(),
     "sent": "{} sent a Pastebin:\n\n📝 {}",
-    "paste_empty": "Please, send in a single message the command /paste followed by the configuration (if any) and your text."
+    "paste_empty": "Please, send in a single message the command /paste followed by the configuration (if any) and your text.",
+    "author": "Developed by <a href='https://github.com/hellmrf'>Heliton Martins</a> (@helitonmrf).\n<a href='https://heliton.site'>Source</a>"
 }
 TELEGRAM_MESSAGES_PT = {
     "start": "Olá! O que você quer colar? Basta me enviar seu texto/código ou enviar /help para ver a utilização completa.",
     "help": _help_pt(),
     "sent": "{} enviou um Pastebin:\n\n📝 {}",
-    "paste_empty": "Por favor, envie em uma única mensagem o comando /paste seguido das configurações (se houver) e do seu texto."
+    "paste_empty": "Por favor, envie em uma única mensagem o comando /paste seguido das configurações (se houver) e do seu texto.",
+    "author": "Desenvolvido por <a href='https://github.com/hellmrf'>Heliton Martins</a> (@helitonmrf).\n<a href='https://heliton.site'>Fonte</a>"
 }

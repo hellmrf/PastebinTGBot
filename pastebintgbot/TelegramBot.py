@@ -16,6 +16,11 @@ class TelegramBot:
         else:
             return TELEGRAM_MESSAGES[key]
 
+    def author_command(self):
+        """Send a message when the command /author is issued."""
+        update.message.reply_text(
+            self._get_message("author", update.message.from_user.language_code), parse_mode="HTML", disable_web_page_preview=True)
+
     def start(self, update: Update, context: CallbackContext) -> None:
         """Send a message when the command /start is issued."""
         update.message.reply_text(
@@ -59,6 +64,7 @@ class TelegramBot:
 
         # Register handlers
         dp.add_handler(CommandHandler("paste", self.receive_paste))
+        dp.add_handler(CommandHandler("author", self.author_command))
         dp.add_handler(CommandHandler(
             "start", self.start, filters=Filters.chat_type.private))
         dp.add_handler(CommandHandler(
