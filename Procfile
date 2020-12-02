@@ -1,0 +1,1 @@
+worker: python3 pastebintgbot/main.py

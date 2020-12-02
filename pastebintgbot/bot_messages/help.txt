@@ -1,0 +1,28 @@
+To save any text to Pastebin.com, just send me a message with the text.
+
+You can also configure the syntax highlighting, expire time and privacy (although this is absolutely optional). For instance, if you want to send a Javascript code snippet that will expire in 10 minutes and won't be public, just send me:
+
+<code>javascript 10M unlisted
+const your_code = "goes here!";
+</code>
+
+And you'll get a link back. The options are:
+
+╔═ <strong>Privacy:</strong>
+╠┄ <code>public</code> (default)
+╠┄ <code>unlisted</code>
+║
+╠═ <strong>Expire time:</strong>
+╠┄ <code>N</code>: Never (default)
+╠┄ <code>10M</code>: 10 Minutes
+╠┄ <code>1H</code>: 1 Hour
+╠┄ <code>1D</code>: 1 Day
+╠┄ <code>1W</code>: 1 Week
+╠┄ <code>2W</code>: 2 Weeks
+╠┄ <code>1M</code>: 1 Month
+║
+╠═ <strong>Syntax Highlighting:</strong>
+╠┄ 253 languages are currently supported. <a href="https://pastebin.com/WT7YzUUV">Click here</a> to see the full list.
+╚═
+
+If you want to use me in a group, just add me. Anyone will be able to create pastebins using the command /paste followed by the (optional) configuration and the text. If you give me privilege to delete messages, I will delete the original message to avoid visual pollution in groups. To opt out of this decision, just block me from deleting messages. In this case, I will just answer where called.
