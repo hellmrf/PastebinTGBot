@@ -95,24 +95,38 @@ which is completely equivalent to:
 
 When creating a paste, you can adjust three options (so far): the syntax highlighting, the expiring time, and the visibility of the paste. These options are expected:
 
-<div style="white-space: pre-wrap;">
 ╔═ <strong>Privacy</strong>:
+
 ╠┄ <code>public</code> (default)
+
 ╠┄ <code>unlisted</code>
+
 ║
+
 ╠═ <strong>Expiring time</strong>:
+
 ╠┄ <code>N</code>: Never (default)
+
 ╠┄ <code>10M</code>: 10 Minutes
+
 ╠┄ <code>1H</code>: 1 Hour
+
 ╠┄ <code>1D</code>: 1 Day
+
 ╠┄ <code>1W</code>: 1 Week
+
 ╠┄ <code>2W</code>: 2 Weeks
+
 ╠┄ <code>1M</code>: 1 Month
+
 ║
+
 ╠═ <strong>Syntax Highlighting</strong>:
-╠┄ 253 languages are currently supported. <a href="https://pastebin.com/WT7YzUUV" target="_blank" rel="noopener noreferrer">Click here</a> to see the full list.
+
+╠┄ 253 languages are currently supported. <a href="https://pastebin.com/WT7YzUUV" 
+target="_blank" rel="noopener noreferrer">Click here</a> to see the full list.
+
 ╚═
-</div>
 
 When these flags are found at the beginning of the message, they are
 considered and removed. If there are two flags of the same category,

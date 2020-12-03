@@ -95,24 +95,37 @@ que é completamente equivalente a
 
 Ao criar um pastebin, você pode ajustar três opções (até agora): a _syntax highlighting_, o tempo de expiração e a visibilidade. Essas opções podem ser:
 
-<div style="white-space: pre-wrap;">
 ╔═ <strong>Privacidade</strong>:
+
 ╠┄ <code>public</code> (padrão)
+
 ╠┄ <code>unlisted</code>
+
 ║
+
 ╠═ <strong>Tempo de expiração</strong>:
+
 ╠┄ <code>N</code>: Never (padrão)
+
 ╠┄ <code>10M</code>: 10 Minutos
+
 ╠┄ <code>1H</code>: 1 Horas
+
 ╠┄ <code>1D</code>: 1 Dia
+
 ╠┄ <code>1W</code>: 1 Semana (Week)
+
 ╠┄ <code>2W</code>: 2 Semanas
+
 ╠┄ <code>1M</code>: 1 Mês
+
 ║
+
 ╠═ <strong>Syntax Highlighting</strong>:
+
 ╠┄ 253 são suportadas no momento. <a href="https://pastebin.com/WT7YzUUV" target="_blank" rel="noopener noreferrer">Clique aqui</a> para ver a lista completa.
+
 ╚═
-</div>
 
 Quando essas flags forem encontradas no começo da mensagem, elas serão consideradas e removidas. Se existem duas flags da mesma categoria, apenas a primeira será considerada e o restante ignorado (mesmo que outras flags válidas apareçam na sequência).
 
