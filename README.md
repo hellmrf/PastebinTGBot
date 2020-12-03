@@ -32,12 +32,13 @@
 
 -   [About the Project](#about-the-project)
     -   [Built With](#built-with)
--   [Getting Started](#getting-started)
-    -   [Prerequisites](#prerequisites)
-    -   [Installation](#installation)
--   [Usage](#usage)
--   [Roadmap](#roadmap)
+    -   [Author](#author)
+-   [Basic Usage](#basic-usage)
+    -   [Using in groups](#using-in-groups)
+    -   [Special options](#special-options)
+-   [Getting Started (for developers and curious)](#getting-started-for-developers-and-curious)
 -   [Contributing](#contributing)
+-   [Roadmap](#roadmap)
 -   [License](#license)
 -   [Contact](#contact)
 
@@ -45,89 +46,182 @@
 
 ## About The Project
 
-[Pastebin.com](https://pastebin.com) is online since 2002. Many people use it to share code and get help, also in Telegram groups. PastebinTGBot allow you to create pastebins directly in your groups or at least within Telegram.
+[Pastebin.com](https://pastebin.com) is online since 2002. Many people use it to share code and get help, also in Telegram groups. PastebinTGBot allows you to create pastebins directly in your groups or at least within Telegram.
 
 ### Built With
 
-This project uses [Python](https://www.python.org/) as programming language and are free hosted on [Heroku](https://www.heroku.com/).
+This project uses [Python](https://www.python.org/) as programming language and is free hosted on [Heroku](https://www.heroku.com/).
 It also uses the following resources.
 
 -   [Telegram Bot API](https://core.telegram.org/bots/api)
 -   [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot)
 -   [Pastebin API](https://pastebin.com/doc_api)
 
----
+### Author
+
+This project is developed and maintained by Heliton Martins. You can [contact me on Telegram](https://t.me/helitonmrf).
+
+## Basic Usage
+
+To use the bot, you can access it on Telegram ([@PastebinTGBot](https://t.me/PastebinTGBot)) and click `Start`. Then you can use the command `/help` to see the complete Usage or just send your text/code. To create a Pastebin containing "Hello World", send this to the bot:
+
+```
+Hello World
+```
+
+which is completely equivalent to
+
+```
+/paste Hello World
+```
+
+### Using in groups
+
+To use the bot in a group, just add it to the group. Admin privilege is not required, but add functionality. When the bot is a normal member, it will reply to any message starting with `/paste` or `/paste@PastebinTGBot` and parse the content according to the rules (discussed below). However, if the bot has permission to delete messages, it'll send the link and delete the original message. It will avoid visual pollution in your group.
+
+To create a Pastebin containing "Hello World" in a group, send this to the group:
+
+```
+/paste Hello World
+```
+
+which is completely equivalent to:
+
+```
+/paste@PastebinTGBot Hello World
+```
+
+### Special options
+
+When creating a paste, you can adjust three options (so far): the syntax highlighting, the expiring time, and the visibility of the paste. These options are expected:
+
+<div style="white-space: pre-wrap;">
+╔═ <strong>Privacy</strong>:
+╠┄ <code>public</code> (default)
+╠┄ <code>unlisted</code>
+║
+╠═ <strong>Expiring time</strong>:
+╠┄ <code>N</code>: Never (default)
+╠┄ <code>10M</code>: 10 Minutes
+╠┄ <code>1H</code>: 1 Hour
+╠┄ <code>1D</code>: 1 Day
+╠┄ <code>1W</code>: 1 Week
+╠┄ <code>2W</code>: 2 Weeks
+╠┄ <code>1M</code>: 1 Month
+║
+╠═ <strong>Syntax Highlighting</strong>:
+╠┄ 253 languages are currently supported. <a href="https://pastebin.com/WT7YzUUV" target="_blank" rel="noopener noreferrer">Click here</a> to see the full list.
+╚═
+</div>
+
+When these flags are found at the beginning of the message, they are
+considered and removed. If there are two flags of the same category,
+only the first is considered and the parsing stops.
+For example, the string
+
+```
+javascript 10M Hello World
+```
+
+will be parsed as "Hello World", formatted as Javascript, and persisted
+for 10 Minutes. On the other hand, the following string
+
+```
+javascript haskell Hello World
+```
+
+will be parsed as "haskell Hello World" and formatted as Javascript.
+
+These flags _must_ be at the first line. If you need to begin your pastebin with the word _Julia_ (and don't want syntax highlighting), you should send this:
+
+```
+/paste
+
+Julia is a relatively new, but very good language.
+```
 
 <!-- GETTING STARTED -->
 
-## Getting Started
+## Getting Started (for developers and curious)
 
 To get a local copy up and running follow these simple steps.
 
-### Prerequisites
+-   Clone the PastebinTGBot and enter the directory
+
+```sh
+$ git clone https://github.com/hellmrf/PastebinTGBot.git
+
+$ cd PastebinTGBot
+```
+
+<small>**Beginners tip**: you'll see shell commands like this: `$ something`. In this case, type just `something` in your Terminal. `$` indicates "shell input".</small>
 
 -   Make sure you have Python &geq; 3.7 and pip.
 
 -   You can create a new [virtual environment](https://docs.python.org/3/tutorial/venv.html), but it's optional
+<!--
 
 ```sh
 $ python3 -m venv pastebintgbot
 
-$ source tutorial-env/bin/activate # Unix
+$ source pastebintgbot/bin/activate # Unix
 
-$ tutorial-env\Scripts\activate.bat # Windows
+$ pastebintgbot\Scripts\activate.bat # Windows
 ```
 
-<small>**Beginners tip**: you'll see shell commands like this: `(pastebintgbot) $ something`. In this case, type just `something` in your Terminal. `(pastebintgbot)` indicates the active virtual environment and `$` indicates "input".</small>
+-->
 
 -   Install dependencies
 
 ```sh
-(pastebintgbot) $ pip install -r requirements.txt
+$ pip install -r requirements.txt
 ```
 
 -   Create your Telegram Bot with [@BotFather](https://telegram.me/BotFather) and get your token.
 
--   Create an account on Pastebin.com to get you `api_dev_key`.
+-   Create an account on Pastebin.com to get you `api_dev_key` ([here](https://pastebin.com/doc_api#1)).
 
--   Create a `.env` file in the root of the project containing:
+-   To test the bot, you'll need a public (and https protected) IP. This usually means a server, but for development, you can use [ngrok](https://ngrok.com/).
 
-```env
+Download and install ngrok for your system and run the following command in a terminal:
+
+```sh
+$ ngrok http 127.0.0.1:8443
+```
+
+You'll see something like that:
+
+```
+Forwarding  https://d1bf0d3b0d39.ngrok.io -> http://127.0.0.1:8443
+```
+
+In this case, `https://d1bf0d3b0d39.ngrok.io` is your public URL (`WEBHOOK_URL` below). Let the terminal running.
+
+-   Create a `.env` file in the folder `pastebintgbot` (the same folder as `main.py`) containing:
+
+```ini
 TELEGRAM_TOKEN=
 PASTEBIN_TOKEN=
-HOST=0.0.0.0
+HOST=127.0.0.1
+PORT=8443
 WEBHOOK_URL=
 ```
 
-The last two are optional.
+You can change the IP and the port, but it must match the ngrok command.
 
-### Installation
+_Windows users_: make sure the file has the _exact_ filename `.env`. You may need to configure Explorer to show extensions.
 
-Clone the PastebinTGBot and enter the directory
-
-```sh
-(pastebintgbot) $ git clone https://github.com/hellmrf/PastebinTGBot.git
-
-(pastebintgbot) $ cd PastebinTGBot
-```
-
----
-
-<!-- USAGE EXAMPLES -->
-
-## Usage
-
-Just run:
+-   If everything is ok, run the bot.
 
 ```sh
-(pastebintgbot) $ python pastebintgbot/main.py
+$ python pastebintgbot/main.py
 ```
 
-<!-- ROADMAP -->
+You should see something similar to this output (maybe more colorful) and you're good to go.
 
-## Roadmap
-
-See the [open issues](https://github.com/hellmrf/PastebinTGBot/issues) for a list of proposed features (and known bugs).
+```
+2021-01-01 00:00:00 you root[20513] INFO Server started on 127.0.0.1:8443. Listening publicily on https://d1bf0d3b0d39.ngrok.io/<token>
+```
 
 <!-- CONTRIBUTING -->
 
@@ -136,10 +230,20 @@ See the [open issues](https://github.com/hellmrf/PastebinTGBot/issues) for a lis
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+2. Create your Feature Branch (`git checkout -b AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+4. Push to the Branch (`git push origin AmazingFeature`)
 5. Open a Pull Request
+
+I will analyze your PR as soon as possible.
+
+---
+
+<!-- ROADMAP -->
+
+## Roadmap
+
+See the [open issues](https://github.com/hellmrf/PastebinTGBot/issues) for a list of proposed features (and known bugs).
 
 <!-- LICENSE -->
 
@@ -151,7 +255,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Heliton Martins - [@hellmrf](https://twitter.com/hellmrf) - helitonmrf@gmail.com
+Heliton Martins - [@hellmrf](https://t.me/helitonmrf) - helitonmrf@gmail.com
 
 Project Link: [https://github.com/hellmrf/PastebinTGBot](https://github.com/hellmrf/PastebinTGBot)
 
