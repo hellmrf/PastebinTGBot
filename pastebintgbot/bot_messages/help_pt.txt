@@ -26,3 +26,5 @@ E você obtém um link de volta. As opções são:
 ╚═
 
 Se você quer me usar em um grupo, basta me adicionar. Qualquer um poderá criar pastebins usando o comando /paste seguido com a configuração opcional e o texto. Se eu possuir privilégio para apagar mensagens, farei isso com a mensagem original para evitar poluição visual em grupos. Para desabilitar isso, simplesmente retire minha permissão para deletar mensagens. Nesse caso, apenas responderei as mensagens que me chamarem.
+
+Se você é desenvolvedor(a) e quer contribuir, eu estou no <a href="https://github.com/hellmrf/PastebinTGBot">Github</a>.

@@ -26,3 +26,5 @@ And you'll get a link back. The options are:
 ╚═
 
 If you want to use me in a group, just add me. Anyone will be able to create pastebins using the command /paste followed by the (optional) configuration and the text. If you give me privilege to delete messages, I will delete the original message to avoid visual pollution in groups. To opt out of this decision, just block me from deleting messages. In this case, I will just answer where called.
+
+If you're a developer and want to contribute, I'm on <a href="https://github.com/hellmrf/PastebinTGBot">Github</a>.
