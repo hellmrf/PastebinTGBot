@@ -10,3 +10,6 @@ WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 
 HOST = os.environ.get("HOST", "0.0.0.0")
 PORT = int(os.environ.get("PORT", 8443))
+
+
+def debug_mode() -> bool: return HOST == "127.0.0.1"

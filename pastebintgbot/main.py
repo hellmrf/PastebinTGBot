@@ -1,9 +1,8 @@
-import os
 from TelegramBot import TelegramBot
 import coloredlogs
 import logging
 coloredlogs.install()
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 
 
 class PasetbinTGBot:
