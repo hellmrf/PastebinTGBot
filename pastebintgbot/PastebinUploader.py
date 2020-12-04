@@ -26,8 +26,8 @@ class PastebinUploader:
         """
         msg = self.remove_bot_call(message)
         msg = self.check_for_config(msg)
-        if len(msg) < 16:
-            raise ValueError("Actual message must have at least 16 characters")
+        if len(msg) < 5:
+            raise ValueError("Actual message must have at least 5 characters")
         if debug_mode():
             self._DEBUG_log_incoming_message(message)
             # return "Test mode." # For DEBUG.
