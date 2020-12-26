@@ -2,7 +2,7 @@ import os
 
 
 def get_message(key: str, lang: str = "en_US"):
-    if lang.startswith("pt"):
+    if lang is not None and lang.startswith("pt"):
         return TELEGRAM_MESSAGES_PT[key]
     else:
         return TELEGRAM_MESSAGES[key]
