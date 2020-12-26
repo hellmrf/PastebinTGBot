@@ -39,7 +39,10 @@ class Runner:
             update (Update): The update that generated this request.
         """
         message = update.message.text
-        username = "@" + update.message.from_user.username
+        if update.message.from_user.username is not None:
+            username = "@" + update.message.from_user.username
+        else:
+            username = update.message.from_user.full_name
         language = update.message.from_user.language_code
         message_id = update.message.message_id
         chat_id = update.message.chat.id
