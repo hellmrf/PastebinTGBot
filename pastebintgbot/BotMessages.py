@@ -27,12 +27,14 @@ TELEGRAM_MESSAGES = {
     "help": _help(),
     "sent": "{} sent a Pastebin:\n\n📝 {}",
     "paste_empty": "Please, send in a single message the command /paste followed by the configuration (if any) and your text. (Or send /help to see the complete usage.)",
-    "author": "Open-source and developed by <a href='https://github.com/hellmrf'>Heliton Martins</a> (@helitonmrf).\n\n<a href='https://github.com/hellmrf/PastebinTGBot'>Source code</a>"
+    "author": "Open-source and developed by <a href='https://github.com/hellmrf'>Heliton Martins</a> (@helitonmrf).\n\n<a href='https://github.com/hellmrf/PastebinTGBot'>Source code</a>",
+    "maintenance": "I'm sorry, but I'm under maintenance right now due to the high demand."
 }
 TELEGRAM_MESSAGES_PT = {
     "start": "Olá! O que você quer colar? Basta me enviar seu texto/código ou enviar /help para ver a utilização completa.",
     "help": _help_pt(),
     "sent": "{} enviou um Pastebin:\n\n📝 {}",
     "paste_empty": "Por favor, envie em uma única mensagem o comando /paste seguido das configurações (se houver) e do seu texto. (Ou envie /help para ver as opções disponíveis).",
-    "author": "Código aberto e desenvolvido por <a href='https://github.com/hellmrf'>Heliton Martins</a> (@helitonmrf).\n\n<a href='https://github.com/hellmrf/PastebinTGBot'>Código Fonte</a>"
+    "author": "Código aberto e desenvolvido por <a href='https://github.com/hellmrf'>Heliton Martins</a> (@helitonmrf).\n\n<a href='https://github.com/hellmrf/PastebinTGBot'>Código Fonte</a>",
+    "maintenance": "Perdão, estou em manutenção no momento devido à alta demanda. Pedimos desculpas pelo inconveniente."
 }

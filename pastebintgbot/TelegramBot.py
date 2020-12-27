@@ -25,7 +25,8 @@ class TelegramBot:
     def receive_paste(self, update: Update, context: CallbackContext) -> None:
         """Receive the code to send to pastebin."""
         # TODO: open a new thread to process requirements for many users at the same time.
-        self.Runner.process_paste(update)
+        self.Runner.just_answer(update, "maintenance")
+        # self.Runner.process_paste(update)
 
     def main(self) -> None:
         """Start the bot."""
